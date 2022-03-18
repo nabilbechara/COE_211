@@ -1,15 +1,17 @@
 import java.util.Scanner;
 
 public class Calculator {
+	
 	int num1;
 	int num2;
 	String Operator;
+	Scanner scan= new Scanner(System.in);
+
 	public Calculator() {
-	Scanner scan= new Scanner;
 	
 	System.out.println("Input the first number: ");
 	num1=scan.nextInt();
-	
+	scan.nextLine();
 	System.out.println("Input the operator: ");
 	Operator=scan.nextLine();
 	
@@ -17,17 +19,21 @@ public class Calculator {
 	num2=scan.nextInt();
 	
 	switch (Operator) {
-  case +:
-    System.out.println(num1 + "+" + num2 +"=" +(num1 + num2));
+  case "+":
+    System.out.println(add(num1, num2));
     break;
- case -;
-   System.out.println(num1 + "-" + num2 +"=" +(num1 - num2))
+ case "-":
+   System.out.println(substract(num1, num2));
     break;
-  case x;
-    System.out.println(num1 + "*" + num2 + "=" +(num1*num2));
-  case /;
-    System.out.println(num1 + "/" + num2 +"=" +(num1/num2));	
-}
+  case "x":
+    System.out.println(multiply(num1, num2));
+ 	break;
+ case "/":
+    System.out.println(divide(num1, num2));
+ default:
+	break;
+}	
+
 }
 	public String add(int a, int b) {
 		return "a + b=" + (a+b);
@@ -40,5 +46,6 @@ public class Calculator {
 }
 	public String divide(int a, int b) {
 		return "a / b=" + (a/b);
+
 }
 }
